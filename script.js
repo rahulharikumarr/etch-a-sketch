@@ -1,22 +1,63 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const grid = document.querySelector('.grid');
+document.addEventListener('DOMContentLoaded', () => {
+
+let size = 0;
+const btn1 = document.querySelector('#btn1')
+const btn2 = document.querySelector('#btn2')
+const btn3 = document.querySelector('#btn3')
+const btn4 = document.querySelector('#btn4')
+
+createGrid(4)
+
+btn1.addEventListener('click', () => {
+    createGrid(4)
+})
+
+btn2.addEventListener('click', () => {
+    createGrid(10)
+})
+
+btn3.addEventListener('click', () => {
+    createGrid(16)
+})
+
+btn4.addEventListener('click', () => {
+    createGrid(30)
+})
+
+console.log(size)
+
+function createDiv(size) {
+    let div = document.createElement('div')
+    div.id = 'grid-square'
+    div.style.width = `calc(500px / ${size})`;
+    div.style.height = `calc(500px / ${size})`;
     
-    function createDiv(size) {
-        const div = document.createElement('div');
-        div.classList.add('box');
-        div.style.width = `${size}px`;
-        div.style.height = `${size}px`;
-        return div;
-    }
-    
-    function createGrid(gridSize) {
-        for (let i = 0; i < gridSize; i++) {
-            for (let j = 0; j < gridSize; j++) {
-                grid.appendChild(createDiv(grid.clientWidth / gridSize));
-            }
+    return div
+}
+
+function createGrid(size) {
+    const container = document.querySelector('.container');
+    container.innerHTML = '';
+
+    for(let i =0; i<size; i++)
+    {
+        let row = document.createElement('div')
+        row.classList.add('row');
+        row.style.width = '500px';
+        row.style.height = `calc(500px / ${size})`;
+        row.style.display = 'flex'
+
+        for(let j=0; j<size; j++)
+        {
+            let cell = createDiv(size)
+            row.appendChild(cell)
         }
+        container.appendChild(row)
     }
-    
-    // Call the createGrid function to create the grid
-    createGrid(4); // You can specify the desired grid size here
-});
+}
+
+
+
+
+
+})
