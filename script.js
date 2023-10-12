@@ -6,22 +6,57 @@ const btn2 = document.querySelector('#btn2')
 const btn3 = document.querySelector('#btn3')
 const btn4 = document.querySelector('#btn4')
 
+const erasebtn = document.querySelector('#erase')
+
+
+
 createGrid(4)
+
+
 
 btn1.addEventListener('click', () => {
     createGrid(4)
+    let squares = document.querySelectorAll('#grid-square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.classList.add('active');
+        });
+    });
+    
+
+    
+
+    
 })
 
 btn2.addEventListener('click', () => {
     createGrid(10)
+    let squares = document.querySelectorAll('#grid-square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.classList.add('active');
+        });
+    });
 })
 
 btn3.addEventListener('click', () => {
     createGrid(16)
+    let squares = document.querySelectorAll('#grid-square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.classList.add('active');
+        });
+    });
 })
 
 btn4.addEventListener('click', () => {
-    createGrid(30)
+    createGrid(50)
+    let squares = document.querySelectorAll('#grid-square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.classList.add('active');
+        });
+    });
 })
 
 console.log(size)
@@ -56,7 +91,14 @@ function createGrid(size) {
     }
 }
 
+let squares = document.querySelectorAll('#grid-square');
 
+
+squares.forEach((square) => {
+    square.addEventListener('mouseover', () => {
+        square.classList.add('active');
+    });
+});
 
 
 

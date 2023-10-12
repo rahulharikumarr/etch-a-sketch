@@ -17,5 +17,9 @@ body{
 }
 
 #grid-square {
-    border: solid black;
+    border: solid lightgray;
+}
+
+.active {
+    background-color: black;
 }
