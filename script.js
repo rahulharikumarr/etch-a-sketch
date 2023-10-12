@@ -50,7 +50,7 @@ btn3.addEventListener('click', () => {
 })
 
 btn4.addEventListener('click', () => {
-    createGrid(50)
+    createGrid(30)
     let squares = document.querySelectorAll('#grid-square');
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
